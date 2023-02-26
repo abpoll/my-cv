@@ -1,3 +1,4 @@
-# CV for James Doss-Gollin
+# CV for Adam Pollack
 
-Under construction but now up
+Under construction
+Thanks to Vivek Srikrishnan and James Doss-Gollin for doing all the hard work
