@@ -1,60 +1,31 @@
 workshops:
-  - title: "Valuing Flexibility and Soft Instruments for Sequential Decision Problems"
-    event: 2020 Annual Meeting of the Society for Decision Making under Deep Uncertainty
-    org: Society for Decision Making under Deep Uncertainty
-    format: Remote Presentation
-    month: Nov
+  - title: "Flood risk signals in the property market and implications for flood risk management"
+    event: 2022 ZTRAX Special Issue Workshop
+    org: Journal of Housing Economics and Land Economics
+    location: Remote Presentation
+    month: August
+    year: 2022
+  - title: "Can property level losses be reliably predicted?"
+    event: "2021 PLACES Webinar: Land, Water, and ZTRAX"
+    org: Boston University
+    location: Remote Presentation
+    month: June
+    year: 2021
+  - title: "Can property level flood losses be reliably predicted?"
+    event: First Street Foundation Flood Lab Workshop
+    org: First Street Foundation
+    location: Remote Presentation
+    month: June
+    year: 2021
+  - title: "Geo-locating ZTRAX"
+    event: "2020 PLACES Webinar"
+    org: Boston University
+    location: Remote Presentation
+    month: June
     year: 2020
-    link: https://2020.deepuncertainty.org/program
-  - title: "Adaptive Resilience through Real Options and Deep Reinforecement Learning"
-    event: Doctoral Consortium on Computational Sustainability
-    org: Carnegie Mellon University
-    location: Pittsburgh,  PA
-    format: Oral Presentation
-    month: Oct
-    year: 2019
-  - title: "Evaluating Staged Investments in Critical Infrastructure for Climate Adaptation"
-    event: Interdisciplinary Ph.D. Workshop in Sustainable Development
-    org: Columbia University
-    location: New York, NY
-    format: Oral Presentation
-    month: Apr
-    year: 2019
-  - title: Robust Adaptation to Multi-Scale Climate Variability
-    event: The Nexus of Climate Data, Insurance, and Adaptive Capacity
-    location: Asheville, NC
-    format: Poster Presentation
-    month: Nov
-    year: 2018
-    link: https://doi.org/10.6084/m9.figshare.8277002.v1
-  - title: "Extreme Rainfall in Paraguay during the 2015-16 Austral Summer: Causes and Predictive Skill"
-    event: North East Graduate Student Water Symposium
-    org: University of Massachusetts Amherst
-    location: Amherst, MA
-    format: Oral Presentation
-    month: Sept
-    year: 2017
-    link: https://doi.org/10.6084/m9.figshare.8277128.v2
-  - title: "Regional Intense Precipitation: Inferences From GCM Atmospheric Circulation Fields"
-    event: Modeling Research in the Cloud
-    org: National Center for Atmospheric Research
-    location: Boulder, CO
-    format: Poster Presentation
-    year: 2017
-    month: May
-    link: https://doi.org/10.6084/m9.figshare.8277167.v1
-  - title: "Statistical-Dynamical Analysis of Climate Projections for Flood Infrastructure Design"
-    event: Interdisciplinary Ph.D. Workshop in Sustainable Development 2017
-    org: Columbia University
-    location: New York, NY
-    format: Oral Presentation
-    year: 2017
-    month: Apr
-  - title: "Causes and Model Skill of the Persistent Intense Rainfall and Flooding in Paraguay during the Austral Summer 2015-2016"
-    event: Workshop on Subseasonal to Seasonal Predictability of Extreme Weather and Climate
-    org: Columbia University
-    location: New York, NY
-    format: Poster Presentation
-    year: 2016
-    month: Dec
-    link: https://doi.org/10.13140/RG.2.2.20146.30406
+  - title: "Data Inputs to Hedonic Flood Risk Models"
+    event: "2020 PLACES Webinar"
+    org: Boston University
+    location: Remote Presentation
+    month: June
+    year: 2020

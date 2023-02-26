@@ -13,7 +13,7 @@ import yaml
 CONFIG_FILE = "_config.yml"
 TEMPLATE_FILE = "cv.latextemplate"  # NOT relative
 TEMPLATE_DIR = "templates"
-OUTPUT_TEX = os.path.join("docs", "Doss-Gollin-CV.tex")
+OUTPUT_TEX = os.path.join("docs", "Pollack-CV.tex")
 
 
 class CV(object):

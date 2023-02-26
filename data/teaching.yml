@@ -1,28 +1,21 @@
 classes:
-  - title: Environmental Data Analysis and Modeling
-    course: EAEEE 4257
-    university: Columbia University
-    role: Teaching Assistant
+  - title: Data, Models and Analysis in Earth and Environment
+    course: EE 270
+    university: Boston University
+    role: Teaching Fellow and Lab Instructor
     semester: Spring
-    year: 2018
-
-  - title: Fundamentals of Civil and Environmental Engineering
-    course: CEVE 101
-    university: Rice University
-    role: Instructor
-    semester: Fall
     year: 2021
 
-  - title: Environmental Data Science
-    course: CEVE 543
-    university: Rice University
-    role: Instructor
+  - title: Data, Models and Analysis in Earth and Environment
+    course: EE 270
+    university: Boston University
+    role: Teaching Fellow and Lab Instructor
     semester: Spring
-    year: 2022
+    year: 2020
 
-  - title: Climate Risk Management
-    course: CEVE 421/521
-    university: Rice University
-    role: Instructor
+  - title: Software Development Fundamentals
+    course: CSE 316
+    university: Stony Brook University
+    role: Teaching Assistant
     semester: Spring
-    year: 2023
+    year: 2016

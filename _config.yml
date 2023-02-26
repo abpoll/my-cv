@@ -1,20 +1,19 @@
 # Configuration for CV
 person:
-  first_name: James
-  last_name: Doss-Gollin
-  title: Assistant Professor
-  university: Rice University
-  department: Department of Civil and Environmental Engineering
-  department_link: https://cee.rice.edu/
-  email: jdossgollin@rice.edu
-  web: https://dossgollin-lab.github.io
-  github: jdossgollin
-  googlescholar: 6ifLBBsAAAAJ
-  orcid: 0000-0002-3428-2224
-  subject: "adaptive and resilient infrastructure"
+  first_name: Adam
+  last_name: Pollack
+  title: Postdoctoral Research Associate
+  university: Dartmouth College
+  department: Thayer School of Engineering
+  department_link: https://engineering.dartmouth.edu/
+  email: adam.b.pollack@dartmouth.edu
+  web: https://keller-lab.github.io/people.html
+  github: abpoll
+  googlescholar: mnigw6AAAAAJ
+  orcid: 0000-0001-6642-0591
   address:
-    line1: 6100 Main Street, Ryon Lab 204-MS 318
-    postcode: Houston, TX, 77005
+    line1: Hinman 8000, 15 Thayer Dr
+    postcode: Hanover, NH 03755
     country: USA
 
 paths:
@@ -36,23 +35,11 @@ sections:
     file: talks.yml
   - title: Workshop Presentations
     file: workshops.yml
-  - title: Grants and Contracts
-    file: grants.yml
   - title: Teaching
     file: teaching.yml
-  - title: Primary Advisor
-    file: advising_primary.yml
-  - title: Committee Member
-    file: advising_committee.yml
   - title: Awards
     file: awards.yml
-  - title: Media Coverage
-    file: media.yml
   - title: Peer Review
     file: peerreview.yml
-  - title: Grant Review
-    file: grantreview.yml
   - title: Additional Experience
     file: training.yml
-  - title: Sessions Organized
-    file: convene.yml

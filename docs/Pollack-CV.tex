@@ -1,0 +1,346 @@
+\documentclass[10pt,oneside]{article}
+
+% language setup
+\usepackage[english]{babel}
+
+% margins
+\usepackage[left=1.5in, right=1.75in, top=1in, bottom=0.75in]{geometry}% adjust the page margins
+
+\RequirePackage{xcolor}
+\definecolor{DartGreen}{HTML}{006633} % official Dartmouth Green color -- use for text etc
+\definecolor{DartAccent}{HTML}{66cc33} % official Dartmouth accent -- use for Section
+\definecolor{BlueAccent}{HTML}{55cee6} % background color, blue accent -- do not use for anything else
+\definecolor{BlueAccent}{HTML}{55cee6} % backup color 
+\definecolor{GrassGreen}{HTML}{359245}
+\definecolor{WarmYellow}{HTML}{E9A139}
+%% Choose fonts for use with xelatex
+
+
+% Better footer
+\usepackage{fancyhdr}
+\fancyhf{}
+\fancyfoot[L]{Adam Pollack}
+\fancyfoot[R]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{1pt}
+\pagestyle{fancy}
+
+
+\usepackage{fontspec}
+\setromanfont[
+	Path = ../fonts/,
+  UprightFont = *-Regular, 
+	BoldFont = *-Bold,
+	ItalicFont = *-Italic,
+	BoldItalicFont = *-BoldItalic,
+	Extension = .ttf,
+]{Lato}
+\setsansfont[
+	Path = ../fonts/,
+  UprightFont = *-Regular, 
+	Extension = .ttf,
+]{Inconsolata}
+
+% Section styling
+\usepackage{titlesec}
+\titlespacing*{\section}{2cm}{1ex}{0.25in}
+\titleformat{\section}[leftmargin]{\raggedleft\sffamily\footnotesize\bfseries}{}{0pt}{\color{BlueAccent}}
+
+\raggedbottom
+
+% useful macro
+\newcommand{\dotspace}{\quad}
+
+% better lists
+\usepackage{enumitem}
+\setlist[itemize, 1]{nosep, noitemsep, labelsep=-5pt, leftmargin=*, after=\vspace{\baselineskip}, itemindent=-15pt, labelindent=5pt}
+
+% fixed width tables
+\usepackage{array}
+\newcommand{\PreserveBackslash}[1]{\let\temp=\\#1\let\\=\temp}
+\newcolumntype{C}[1]{>{\PreserveBackslash\centering}p{#1}}
+\newcolumntype{R}[1]{>{\PreserveBackslash\raggedleft}p{#1}}
+\newcolumntype{L}[1]{>{\PreserveBackslash\raggedright}p{#1}}
+
+\usepackage[autostyle=true, autopunct=true, english=american]{csquotes}
+\usepackage[
+	backend=biber,
+	style=publist,
+	plauthorfirstinit=true,
+	plauthorhandling=highlight,
+	plnumbered=false,
+	labeldateparts=false,
+	boldyear=false,
+	marginyear=false,
+	doi=true,
+	url=false,
+	isbn=false,
+	maxbibnames=5,
+	maxcitenames=99,
+	date=year,
+	sorting=ydnt,
+]{biblatex}
+\setlength{\bibhang}{15pt}
+
+% add bib resource
+\addbibresource{../my-papers/my-papers.bib}
+
+% bold my name
+\plauthorname[Adam]{Pollack}
+\plauthorname[Adam B]{Pollack}
+\plauthorname[A]{Pollack}
+
+% include everything in bibliography
+\nocite{*}
+
+%% other stuff
+% icons for the contact info
+\usepackage{fontawesome5}
+\usepackage{academicons}
+
+% have to load this last
+\usepackage{hyperref} % Required for adding links	and customizing them
+\hypersetup{hidelinks, breaklinks}
+
+%---------------------------------------------------------------------
+
+\begin{document}
+
+\thispagestyle{empty}
+%% Name and contact block
+\noindent{
+  \footnotesize
+  \color{DartAccent}
+  \begin{tabular}{L{0.5\textwidth}R{0.5\textwidth}}
+    Dartmouth College       & \texttt{\href{mailto:adam.b.pollack@dartmouth.edu}{adam.b.pollack@dartmouth.edu}} \, \faEnvelope                                                                                  \\
+    Thayer School of Engineering       & \texttt{\href{https://keller-lab.github.io/people.html}{https://keller-lab.github.io/people.html}} \, \faGlobe                                                                                                \\
+    Hinman 8000, 15 Thayer Dr    & \texttt{\href{https://github.com/abpoll}{abpoll}} \, \faGithub                                                                      \\
+    Hanover, NH 03755 & \texttt{\href{https://scholar.google.com/citations?user=mnigw6AAAAAJ}{Adam Pollack}} \, \aiGoogleScholar \\
+  \end{tabular}
+}
+
+\bigskip
+
+%% Name
+\noindent{\LARGE\bfseries \textcolor{DartGreen}{Adam Pollack}}
+\reversemarginpar
+
+\bigskip
+
+%% Research Interests
+
+\section{research interests}
+
+\mbox{}\vspace{-\dimexpr\baselineskip\relax}
+
+\begin{itemize}[label={}]
+  
+  \item Climate risk management and adaptation
+        
+  \item Multi-objective robust decision-making
+        
+  \item Multi-scale equity-efficiency synergies and tradeoffs
+        
+  \item Transparent and open science
+        
+\end{itemize}
+
+%% Appointments
+
+\section{appointments}
+
+\mbox{}\vspace{-\dimexpr\baselineskip\relax}
+
+\begin{itemize}[label={}]
+  
+  \item \textbf{Dartmouth College}
+        
+        \textit{Postdoctoral Research Associate}, Thayer School of Engineering, 2022--present.
+        
+        adviser: Klaus Keller
+        
+        
+        
+\end{itemize}
+
+%% Education
+
+\section{education}
+
+\mbox{}\vspace{-\dimexpr\baselineskip\relax}
+
+\begin{itemize}[label={}]
+  
+  \item \textbf{Boston University}
+        
+        \textit{Ph.D}, Earth \& Environment, 2022.
+        
+        
+        adviser: Christoph Nolte
+        
+        
+  \item \textbf{Stony Brook University}
+        
+        \textit{M.S.}, Applied Mathematics and Statistics, 2016.
+        
+        \textit{B.S.}, Applied Mathematics and Statistics, 2016.
+        
+        
+        
+\end{itemize}
+
+%% Awards
+
+\section{awards}
+
+\mbox{}\vspace{-\dimexpr\baselineskip\relax}
+
+\begin{itemize}[label={}]
+  
+  \item \textbf{Research Fellowship}, Boston University, 2022.
+        
+  \item \textbf{Research Fellowship}, Boston University, 2021.
+        
+  \item \textbf{Teaching Fellowship}, Boston University, 2021.
+        
+  \item \textbf{Research Fellowship}, Boston University, 2020.
+        
+  \item \textbf{Teaching Fellowship}, Boston University, 2020.
+        
+  \item \textbf{Research Fellowship}, Boston University, 2019.
+        
+  \item \textbf{Dean's Fellowship}, Boston University, 2019.
+        
+\end{itemize}
+
+%% Publications
+
+\section{journal articles}
+
+\mbox{}\vspace{-\dimexpr\baselineskip\relax}
+\vspace*{-1em}
+
+\printbibliography[type=article, heading=none]
+
+\section{preprints \& in review}
+
+\mbox{}\vspace{-\dimexpr\baselineskip\relax}
+\vspace*{-1em}
+\printbibliography[type=unpublished, heading=none]
+
+\section{technical reports}
+
+\mbox{}\vspace{-\dimexpr\baselineskip\relax}
+\vspace*{-1em}
+\printbibliography[type=report, heading=none]
+
+%% Invited Talks
+
+\section{invited talks}
+
+\mbox{}\vspace{-\dimexpr\baselineskip\relax}
+
+\begin{itemize}[label={}]
+  
+  \item \enquote{\textbf{Using Toy Problems to Improve Intuition, Convergent Research Designs, and Decision-Support}}, Seminar Meeting of the Megalopolitan Coastal Transformation Hub,  \textit{Rutgers University}. Remote Presentation, 2022.
+  
+  \item \enquote{\textbf{Do markets price weather-related risks?}}, Climate Econometrics Seminar Series,  \textit{Climate Econometrics, Nuffield College, University of Oxford}. Remote Presentation, 2021.
+  
+  \item \enquote{\textbf{Flood Loss Risk and Its Drivers: Evidence from Massachusetts Residential Properties}}, 2020 Climate and Health Seminar,  \textit{Boston University School of Public Health}. Remote Presentation, 2020.
+  
+  \item \enquote{\textbf{Parcel level flood risk and interventions in Massachusetts}}, Cloud to Street Lab Meeting,  \textit{Cloud to Street}. Remote Presentation, 2020.
+  
+  \item \enquote{\textbf{Panama Papers: Temporal and Spatial Trends in Entity Formation}}, Symposium on Big Data, Human Health and Statistics,  \textit{University of Michigan}. Ann Arbor, MI, 2016.
+  
+\end{itemize}
+
+%% Teaching
+
+\section{teaching}
+
+\mbox{}\vspace{-\dimexpr\baselineskip\relax}
+
+
+\begin{itemize}[label={}]
+  
+  \item \textbf{Boston University}
+        
+        Data, Models and Analysis in Earth and Environment. Teaching Fellow and Lab Instructor. Spring 2021.
+        
+        Data, Models and Analysis in Earth and Environment. Teaching Fellow and Lab Instructor. Spring 2020.
+        
+        
+  \item \textbf{Stony Brook University}
+        
+        Software Development Fundamentals. Teaching Assistant. Spring 2016.
+        
+        
+\end{itemize}
+
+%% CONFERENCE PROCEEDINGS
+\section{conference papers}
+
+\mbox{}\vspace{-\dimexpr\baselineskip\relax}
+\vspace*{-1em}
+\printbibliography[type=inproceedings, heading=none]
+
+%% WORKSHOPS
+
+\section{workshop presentations}
+
+\mbox{}\vspace{-\dimexpr\baselineskip\relax}
+
+\begin{itemize}[label={}]
+  
+  \item \enquote{\textbf{Flood risk signals in the property market and implications for flood risk management}}, 2022 ZTRAX Special Issue Workshop,  \textit{Journal of Housing Economics and Land Economics}. Remote Presentation.  August. 2022.
+        
+  \item \enquote{\textbf{Can property level losses be reliably predicted?}}, 2021 PLACES Webinar: Land, Water, and ZTRAX,  \textit{Boston University}. Remote Presentation.  June. 2021.
+        
+  \item \enquote{\textbf{Can property level flood losses be reliably predicted?}}, First Street Foundation Flood Lab Workshop,  \textit{First Street Foundation}. Remote Presentation.  June. 2021.
+        
+  \item \enquote{\textbf{Geo-locating ZTRAX}}, 2020 PLACES Webinar,  \textit{Boston University}. Remote Presentation.  June. 2020.
+        
+  \item \enquote{\textbf{Data Inputs to Hedonic Flood Risk Models}}, 2020 PLACES Webinar,  \textit{Boston University}. Remote Presentation.  June. 2020.
+        
+\end{itemize}
+
+%% PEER REVIEW
+
+\section{peer review}
+
+\mbox{}\vspace{-\dimexpr\baselineskip\relax}
+
+\begin{itemize}[label={}]
+  
+    \item Business \& Economics
+  
+    \item Land Economics
+  
+    \item Water Resources Research
+  
+\end{itemize}
+
+%% Additional Experience and Training
+
+\section{additional experience}
+
+\mbox{}\vspace{-\dimexpr\baselineskip\relax}
+
+\begin{itemize}[label={}]
+  
+  \item \textbf{Co-Chair, Student Postdoc Leadership Council}, Megalopolitan Coastal Transformation Hub. 2022--present.
+  
+  \item \textbf{Lead, Data Integration Working Group}, Megalopolitan Coastal Transformation Hub. 2022--present.
+  
+  \item \textbf{Social and Behavioral Research - Basic}, CITI program. 2022--2025.\\Record \#48549028.
+  
+  \item \textbf{Founder, Irving Institute Research Labs Seminar Group}, Irving Institute for Energy \& Society. 2022--2023.
+  
+  \item \textbf{Summer School Participant}, Summer School on Sustainable Climate Risk Management. 2019.
+  
+  \item \textbf{Summer School Participant}, University of Michigan Big Data Summer Institute. 2016.
+  
+\end{itemize}
+
+
+\end{document}

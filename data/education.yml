@@ -1,16 +1,16 @@
-Columbia University:
+Boston University:
   degrees:
     - degree: Ph.D
-      subject: Earth & Environmental Engineering
-      year: 2020
-    - degree: M.S.
-      subject: Earth & Environmental Engineering
-      year: 2016
+      subject: Earth & Environment
+      year: 2022
   notes:
-    - "adviser: Upmanu Lall"
+    - "adviser: Christoph Nolte"
 
-Yale University:
+Stony Brook University:
   degrees:
+    - degree: M.S.
+      subject: Applied Mathematics and Statistics
+      year: 2016
     - degree: B.S.
-      subject: Mechanical Engineering
-      year: 2015
+      subject: Applied Mathematics and Statistics
+      year: 2016
