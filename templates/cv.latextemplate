@@ -7,8 +7,8 @@
 \usepackage[left=1.5in, right=1.75in, top=1in, bottom=0.75in]{geometry}% adjust the page margins
 
 \RequirePackage{xcolor}
-\definecolor{DartGreen}{HTML}{006633} % official Dartmouth Green color -- use for text etc
-\definecolor{DartAccent}{HTML}{66cc33} % official Dartmouth accent -- use for Section
+\definecolor{DartGreen}{HTML}{006633} % official Dartmouth Green color -- use for headers
+\definecolor{DartAccent}{HTML}{66cc33} % official Dartmouth accent -- use for urls
 \definecolor{BlueAccent}{HTML}{55cee6} % background color, blue accent -- do not use for anything else
 \definecolor{BlueAccent}{HTML}{55cee6} % backup color 
 \definecolor{GrassGreen}{HTML}{359245}
@@ -19,7 +19,7 @@
 % Better footer
 \usepackage{fancyhdr}
 \fancyhf{}
-\fancyfoot[L]{Adam Pollack}
+\fancyfoot[L]{Current as of \today}
 \fancyfoot[R]{\thepage}
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{1pt}
@@ -29,7 +29,7 @@
 \usepackage{fontspec}
 \setromanfont[
 	Path = ../fonts/,
-  UprightFont = *-Regular, 
+  UprightFont = *-Regular,
 	BoldFont = *-Bold,
 	ItalicFont = *-Italic,
 	BoldItalicFont = *-BoldItalic,
@@ -37,14 +37,14 @@
 ]{Lato}
 \setsansfont[
 	Path = ../fonts/,
-  UprightFont = *-Regular, 
+  UprightFont = *-Regular,
 	Extension = .ttf,
 ]{Inconsolata}
 
 % Section styling
 \usepackage{titlesec}
 \titlespacing*{\section}{2cm}{1ex}{0.25in}
-\titleformat{\section}[leftmargin]{\raggedleft\sffamily\footnotesize\bfseries}{}{0pt}{\color{BlueAccent}}
+\titleformat{\section}[leftmargin]{\raggedleft\sffamily\footnotesize\bfseries}{}{0pt}{\color{DartAccent}}
 
 \raggedbottom
 
@@ -63,6 +63,7 @@
 \newcolumntype{L}[1]{>{\PreserveBackslash\raggedright}p{#1}}
 
 \usepackage[autostyle=true, autopunct=true, english=american]{csquotes}
+
 \usepackage[
 	backend=biber,
 	style=publist,
@@ -70,20 +71,37 @@
 	plauthorhandling=highlight,
 	plnumbered=false,
 	labeldateparts=false,
-	boldyear=false,
+	linktitles={none, doi, url},
+	hlyear=true,
 	marginyear=false,
 	doi=true,
 	url=false,
 	isbn=false,
-	maxbibnames=5,
+	maxbibnames=99,
 	maxcitenames=99,
-	date=year,
-	sorting=ydnt,
+  giveninits,
+	date=year
 ]{biblatex}
+\renewbibmacro{in:}{}
 \setlength{\bibhang}{15pt}
 
-% add bib resource
-\addbibresource{../my-papers/my-papers.bib}
+% remove period inbetween volume and number
+\renewbibmacro*{volume+number+eid}{%
+  \printfield{volume}%
+%  \setunit*{\adddot}% DELETED
+  \setunit*{\addnbspace}% NEW (optional); there's also \addnbthinspace
+  \printfield{number}%
+  \setunit{\addcomma\space}%
+  \printfield{eid}%
+}
+
+\AtEveryBibitem{%
+  \clearlist{language}%
+}
+
+% add bib resources
+\addbibresource{../bibliography/my-papers.bib}
+\addbibresource{../bibliography/conferences.bib}
 
 % bold my name
 \plauthorname[Adam]{Pollack}
@@ -98,9 +116,14 @@
 \usepackage{fontawesome5}
 \usepackage{academicons}
 
+% got this from here https://www.reddit.com/r/LaTeX/comments/40zflc/embedding_url_link_into_article_title_using/
+\newbibmacro{string+doi}[1]{%
+  \iffieldundef{doi}{\iffieldundef{url}{#1}{\href{\thefield{url}}{#1}}}{\href{http://dx.doi.org/\thefield{doi}}{#1}}}
+\DeclareFieldFormat*{title}{\usebibmacro{string+doi}{\mkbibemph{#1}}}
+
 % have to load this last
 \usepackage{hyperref} % Required for adding links	and customizing them
-\hypersetup{hidelinks, breaklinks}
+\hypersetup{hidelinks, breaklinks, urlcolor=DartAccent, linkcolor=DartAccent}
 
 %---------------------------------------------------------------------
 
@@ -110,7 +133,7 @@
 %% Name and contact block
 \noindent{
   \footnotesize
-  \color{DartAccent}
+  \color{DartGreen}
   \begin{tabular}{L{0.5\textwidth}R{0.5\textwidth}}
     (((data.person.university)))       & \texttt{\href{mailto:(((data.person.email)))}{(((data.person.email)))}} \, \faEnvelope                                                                                  \\
     (((data.person.department)))       & \texttt{\href{(((data.person.web)))}{(((data.person.web)))}} \, \faGlobe                                                                                                \\
@@ -193,6 +216,8 @@
 
 \mbox{}\vspace{-\dimexpr\baselineskip\relax}
 \vspace*{-1em}
+
+\uspunctuation
 
 \printbibliography[type=article, heading=none]
 

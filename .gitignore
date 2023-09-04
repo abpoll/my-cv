@@ -291,3 +291,5 @@ Srikrishnan-CV.tex
 Doss-Gollin-CV.tex
 
 ./DS_Store
+
+*.pyc

@@ -17,12 +17,14 @@ person:
     country: USA
 
 paths:
-  bib_path: my-papers
+  bib_path: bibliography
   yaml_path: data
 
 publications:
   - title: Papers
     file: my-papers.bib
+  - title: Conference Papers
+    file: conferences.bib
 
 sections:
   - title: Research Interests
