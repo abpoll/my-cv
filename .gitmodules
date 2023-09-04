@@ -1,3 +1,7 @@
 [submodule "my-papers"]
 	path = my-papers
 	url = https://github.com/abpoll/my-papers
+[submodule "bibliography"]
+	path = bibliography
+	url = https://github.com/abpoll/bibliography.git
+	branch = main
