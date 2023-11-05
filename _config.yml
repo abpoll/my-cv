@@ -45,3 +45,5 @@ sections:
     file: peerreview.yml
   - title: Additional Experience
     file: training.yml
+  - title: Grants and Contracts
+    file: grants.yml
