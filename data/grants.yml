@@ -1,8 +1,8 @@
 grants:
-  - title: Integrated Coastal Modeling (ICoM)
-    funder: DOE (BER)
-    PI: Ian Kraucunas
-    role: Co-PI
+  - title: Contribute to the Integrated Coastal Modeling (ICoM) project, Subaward to Dartmouth College from Battelle
+    funder: DOE-Prime
+    PI: Klaus Keller
+    role: Co-Principal Investigator
     start: 2023
     end: 2024
-    amount: 109,356
+    amount: 231,794
