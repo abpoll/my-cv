@@ -1,11 +1,4 @@
 workshops:
-  - title: "CoPe Cross-Hub Community of Practice: Successes and struggles on the path to convergence research"
-    event: "CoPe Cross-Hub Community of Practice Seminar"
-    org: National Science Foundation
-    location: Remote Presentation
-    month: November
-    year: 2023
-    link: https://zenodo.org/doi/10.5281/zenodo.10137316
   - title: "Transparency on underlying values is needed for useful equity measurements"
     event: "Annual Conference of the Society of Decision Making Under Deep Uncertainty"
     org: Society of Decision Making Under Deep Uncertainty
@@ -48,3 +41,9 @@ workshops:
     location: Remote Presentation
     month: June
     year: 2020
+  - title: "Panama Papers: Temporal and Spatial Trends in Entity Formation"
+    event: Symposium on Big Data, Human Health and Statistics
+    org: University of Michigan
+    location: Ann Arbor, MI
+    month: June
+    year: 2016

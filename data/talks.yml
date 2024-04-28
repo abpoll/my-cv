@@ -1,13 +1,32 @@
 talks:
+  - title: "Funding rules that promote equity in climate adaptation outomces"
+    event: Faculty Seminar Series Talk
+    org: The Arthur L. Irving Institute for Energy and Society at Dartmouth
+    location: Hanover, New Hampshire
+    month: April
+    year: 2024
+  - title: "Funding rules that promote equity in climate adaptation outomces"
+    event: University of Rhode Island Spring 2024 Seminar
+    org: Department of Environmental and Natural Resource Economics
+    location: Kingston, Rhode Island
+    month: April
+    year: 2024
   - title: "Reproducible science is a foundation of convergence research"
     event: MACH Seminar Series
     org: Megalopolitan Coastal Transformation Hub (MACH)
     location: Online
     month: March
     year: 2024
+  - title: "CoPe Cross-Hub Community of Practice: Successes and struggles on the path to convergence research"
+    event: "CoPe Cross-Hub Community of Practice Seminar"
+    org: National Science Foundation
+    location: Online
+    month: November
+    year: 2023
+    link: https://zenodo.org/doi/10.5281/zenodo.10137316
   - title: "Transparency on underlying values is needed for useful equity measurements"
     event: Working Group on Social-Science Water Research Invited Seminar Talk
-    org: Helmholtz Centre for Environmental Research GmbH - UFZ  
+    org: Helmholtz Centre for Environmental Research GmbH - UFZ
     location: Online
     month: February
     year: 2024
@@ -26,36 +45,30 @@ talks:
   - title: "Supporting Integration Through MACH Prototype Decision-Analyses"
     event: Integration Meeting of the Megalopolitan Coastal Transformation Hub
     org: Rutgers University
-    location: Remote Presentation
+    location: Online
     month: December
     year: 2022
   - title: "Using Toy Problems to Improve Intuition, Convergent Research Designs, and Decision-Support"
     event: Seminar Meeting of the Megalopolitan Coastal Transformation Hub
     org: Rutgers University
-    location: Remote Presentation
+    location: Online
     month: September
     year: 2022
   - title: "Do markets price weather-related risks?"
     event: Climate Econometrics Seminar Series
     org: Climate Econometrics, Nuffield College, University of Oxford
-    location: Remote Presentation
+    location: Online
     month: January
     year: 2021
   - title: "Flood Loss Risk and Its Drivers: Evidence from Massachusetts Residential Properties"
     event: 2020 Climate and Health Seminar
     org: Boston University School of Public Health
-    location: Remote Presentation
+    location: Online
     month: June
     year: 2020
   - title: "Parcel level flood risk and interventions in Massachusetts"
     event: Cloud to Street Lab Meeting
     org: Cloud to Street
-    location: Remote Presentation
+    location: Online
     month: March
     year: 2020
-  - title: "Panama Papers: Temporal and Spatial Trends in Entity Formation"
-    event: Symposium on Big Data, Human Health and Statistics
-    org: University of Michigan
-    location: Ann Arbor, MI
-    month: June
-    year: 2016
