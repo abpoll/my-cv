@@ -1,8 +1,21 @@
 workshops:
+  - title: "CoPe Cross-Hub Community of Practice: Successes and struggles on the path to convergence research"
+    event: "CoPe Cross-Hub Community of Practice Seminar"
+    org: National Science Foundation
+    location: Remote Presentation
+    month: November
+    year: 2023
+    link: https://zenodo.org/doi/10.5281/zenodo.10137316
+  - title: "Transparency on underlying values is needed for useful equity measurements"
+    event: "Annual Conference of the Society of Decision Making Under Deep Uncertainty"
+    org: Society of Decision Making Under Deep Uncertainty
+    location: Delft, Netherlands (Poster)
+    month: October
+    year: 2023
   - title: "Transparency on underlying values is needed for useful equity measurements"
     event: "Advancing Complex Adaptive Human-Earth Systems Science in a World of Interconnected Risks"
     org: MultiSector Dynamics
-    location: Davis, California
+    location: Davis, California (Poster)
     month: October
     year: 2023
   - title: "Flood risk signals in the property market and implications for flood risk management"

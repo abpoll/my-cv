@@ -198,15 +198,15 @@
         ((* endfor *))
 \end{itemize}
 
-%% Awards
-((* set sect = data.sections | select_by_attr_name("title", "Awards") *))
+%% Grants and Contracts
+((* set sect = data.sections | select_by_attr_name("title", "Grants and Contracts") *))
 \section{(((sect.title | lower)))}
 
 \mbox{}\vspace{-\dimexpr\baselineskip\relax}
 
 \begin{itemize}[label={}]
-  ((* for award in sect.entries.awards | sort(attribute="year", reverse=True) *))
-  \item \textbf{(((award.title)))}, (((award.org))), (((award.year))).
+  ((* for i in sect.entries.grants | sort(attribute="end", reverse=True) | sort(attribute="start", reverse=True) *))
+  \item \textbf{(((i.role | escape_tex)))}, \enquote{(((i.title | escape_tex)))}. ((* if i.PI *)) PI: (((i.PI | escape_tex))).((* endif *)) {(((i.funder | escape_tex)))}, \$(((i.amount)))((* if i.total *)) (total: \$(((i.total))))((* endif *)). (((i.start)))--(((i.end))).
         ((* endfor *))
 \end{itemize}
 
@@ -233,6 +233,12 @@
 \vspace*{-1em}
 \printbibliography[type=report, heading=none]
 
+\section{science translation}
+
+\mbox{}\vspace{-\dimexpr\baselineskip\relax}
+\vspace*{-1em}
+\printbibliography[type=misc, heading=none]
+
 %% Invited Talks
 ((* set sect = data.sections | select_by_attr_name("title", "Invited Talks") *))
 \section{(((sect.title | lower)))}
@@ -243,22 +249,6 @@
   ((* for i in sect.entries.talks | sort(attribute="year", reverse=True) *))
   \item \enquote{\textbf{(((i.title | escape_tex)))}}, ((* if i.event *))(((i.event | escape_tex))), ((* endif *)) \textit{(((i.org | escape_tex)))}. (((i.location))), (((i.year))).
   ((* endfor *))
-\end{itemize}
-
-%% Teaching
-((* set sect = data.sections | select_by_attr_name("title", "Teaching") *))
-\section{(((sect.title | lower)))}
-
-\mbox{}\vspace{-\dimexpr\baselineskip\relax}
-
-((* set courses = sect.entries.classes *))
-\begin{itemize}[label={}]
-  ((* for univ, course_list in courses | groupby("university")  *))
-  \item \textbf{(((univ)))}
-        ((* for course in course_list | sort_first_year("year", reverse=True) *))
-        (((course.title | escape_tex))). (((course.role))). (((course. semester))) (((course.year))).
-        ((* endfor *))
-        ((* endfor *))
 \end{itemize}
 
 %% CONFERENCE PROCEEDINGS
@@ -290,6 +280,34 @@
   ((* for i in sect.entries.peerreview | sort(attribute="journal") *))
     \item (((i.journal | escape_tex)))
   ((* endfor *))
+\end{itemize}
+
+%% Awards
+((* set sect = data.sections | select_by_attr_name("title", "Awards") *))
+\section{(((sect.title | lower)))}
+
+\mbox{}\vspace{-\dimexpr\baselineskip\relax}
+
+\begin{itemize}[label={}]
+  ((* for award in sect.entries.awards | sort(attribute="year", reverse=True) *))
+  \item \textbf{(((award.title)))}, (((award.org))), (((award.year))).
+        ((* endfor *))
+\end{itemize}
+
+%% Teaching
+((* set sect = data.sections | select_by_attr_name("title", "Teaching") *))
+\section{(((sect.title | lower)))}
+
+\mbox{}\vspace{-\dimexpr\baselineskip\relax}
+
+((* set courses = sect.entries.classes *))
+\begin{itemize}[label={}]
+  ((* for univ, course_list in courses | groupby("university")  *))
+  \item \textbf{(((univ)))}
+        ((* for course in course_list | sort_first_year("year", reverse=True) *))
+        (((course.title | escape_tex))). (((course.role))). (((course. semester))) (((course.year))).
+        ((* endfor *))
+        ((* endfor *))
 \end{itemize}
 
 %% Additional Experience and Training
