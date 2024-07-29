@@ -1,7 +1,11 @@
 Dartmouth College:
+  - role: Research Scientist
+    org: Thayer School of Engineering
+    start: 2024
+    end: present
   - role: Postdoctoral Research Associate
     org: Thayer School of Engineering
-    start: 2022
+    start: 2024
     end: present
     notes:
       - "adviser: Klaus Keller"
