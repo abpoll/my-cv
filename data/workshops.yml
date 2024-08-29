@@ -1,8 +1,21 @@
 workshops:
+  - title: "Modeling household responses to coastal urban flooding (co-presenter with Parin Bhaduri)"
+    event: "2024 Department of Energy Earth and Environmental Systems Modeling PI Meeting"
+    org: "Department of Energy"
+    location: North Bethesda, Maryland
+    month: August
+    year: 2024
+  - title: "An UNcertain Structure and Fragility Ensemble (UNSAFE) Framework for Property-Level Flood-Risk Estimation"
+    event: "2024 Department of Energy Earth and Environmental Systems Modeling PI Meeting"
+    org: "Department of Energy"
+    location: North Bethesda, Maryland (Poster)
+    month: August
+    year: 2024
   - title: "Improving equity considerations in multisector dynamics research"
     event: "2024 Energy Modeling Forum Snowmass Workshop"
     org: "Department of Energy, Biological and Environmental Research"
     location: Snowmass, Colorado
+    month: June
     year: 2024
   - title: "Transparency on underlying values is needed for useful equity measurements"
     event: "Annual Conference of the Society of Decision Making Under Deep Uncertainty"
