@@ -103,6 +103,7 @@ def main():
         filters.select_by_attr_name,
         filters.sort_by_attr,
         filters.sort_first_year,
+        filters.sort_advisees
     ]
 
     cv = CV(CONFIG_FILE, filters=my_filters)

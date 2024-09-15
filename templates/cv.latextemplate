@@ -46,6 +46,36 @@
 \titlespacing*{\section}{2cm}{1ex}{0.25in}
 \titleformat{\section}[leftmargin]{\raggedleft\sffamily\footnotesize\bfseries}{}{0pt}{\color{DartAccent}}
 
+\makeatletter
+\newif\ifaftersec\aftersecfalse
+
+\newcommand\setsubskip{%
+    \global\aftersectrue
+    \everypar{%
+        \global\aftersecfalse
+        \if@noskipsec
+            \global\@noskipsecfalse
+            \clubpenalty\@M
+            \hskip-\parindent
+            \begingroup
+                \@svsechd\unskip{\hspace{\@tempskipb}}%
+            \endgroup
+        \else
+            \clubpenalty\@clubpenalty\everypar{}%
+        \fi}}
+
+\newcommand\subskip{%
+  \ifaftersec
+     \removelastskip%
+     \vspace{-\baselineskip}
+  \fi
+  \global\aftersecfalse}
+
+
+% Subsection styling
+\titleformat{\subsection}{\subskip\itshape}{}{0pt}{}[]
+\titlespacing*{\subsection}{0em}{0.5ex}{0ex}
+
 \raggedbottom
 
 % useful macro
@@ -252,7 +282,7 @@
 \end{itemize}
 
 %% CONFERENCE PROCEEDINGS
-\section{conference papers}
+\section{conference presentations}
 
 \mbox{}\vspace{-\dimexpr\baselineskip\relax}
 \vspace*{-1em}
@@ -269,6 +299,33 @@
   \item ((* if i.link *))\href{(((i.link)))}{\enquote{\textbf{(((i.title | escape_tex)))}}}((* else *))\enquote{\textbf{(((i.title | escape_tex)))}}((* endif *)), ((* if i.event *))(((i.event | escape_tex))), ((* endif *)) \textit{(((i.org)))}. (((i.location))). ((* if i.format *))(((i.format))).((* endif *)) (((i.month)))((* if i.month != "May" *)).((* endif *)) (((i.year)))((* if i.coauthor *)) (with (((i.coauthor))))((* endif *)).
         ((* endfor *))
 \end{itemize}
+
+%% Advising
+((* set sect = data.sections | select_by_attr_name("title", "Advising") *))
+\section{(((sect.title | lower)))}
+
+\mbox{}\vspace{-\dimexpr\baselineskip\relax}
+
+%% \vspace{\baselineskip}
+((* set advisees = sect.entries.advising *))
+((* for t, i in advisees | groupby("type") | sort_advisees(reverse=False) *))
+\subsection{(((t)))}
+\begin{itemize}[label={}]
+%% ((* if t == "Postdoctoral" *))
+%% ((* for x in i | sort_by_attr(["end", "start"], reverse=True) *))
+%% \item (((x.name))). (((x.area))). ((*if x.note *))(((x.note))).((* endif *)) (((x.start)))--(((x.end))). ((*if x.current *)) Current: (((x.current))).((* endif *))
+%% ((* endfor *))
+%% ((* elif t == "Graduate" *))
+%% ((* for x in i | sort_by_attr(["degree", "end", "start"], reverse=True) *))
+%% \item (((x.name))). (((x.degree))), (((x.field))). (((x.role))). (((x.start)))--(((x.end))). ((*if x.thesis *)) Thesis: "((( x.thesis | capitalize )))."((* endif *)) ((*if x.current *)) Current: (((x.current))).((* endif *))
+%% ((* endfor *))
+%% ((* else *))
+((* for x in i | sort_by_attr(["end", "start"], reverse=True) *))
+\item (((x.name))). (((x.field))). (((x.role))). (((x.start)))--(((x.end))). ((*if x.thesis *)) Thesis: "((( x.thesis | capitalize )))."((* endif *)) ((*if x.current *)) Current: (((x.current))).((* endif *))
+((* endfor *))
+%% ((* endif *))
+\end{itemize}
+((* endfor *))
 
 %% PEER REVIEW
 ((* set sect = data.sections | select_by_attr_name("title", "Peer Review") *))

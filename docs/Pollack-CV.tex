@@ -46,6 +46,36 @@
 \titlespacing*{\section}{2cm}{1ex}{0.25in}
 \titleformat{\section}[leftmargin]{\raggedleft\sffamily\footnotesize\bfseries}{}{0pt}{\color{DartAccent}}
 
+\makeatletter
+\newif\ifaftersec\aftersecfalse
+
+\newcommand\setsubskip{%
+    \global\aftersectrue
+    \everypar{%
+        \global\aftersecfalse
+        \if@noskipsec
+            \global\@noskipsecfalse
+            \clubpenalty\@M
+            \hskip-\parindent
+            \begingroup
+                \@svsechd\unskip{\hspace{\@tempskipb}}%
+            \endgroup
+        \else
+            \clubpenalty\@clubpenalty\everypar{}%
+        \fi}}
+
+\newcommand\subskip{%
+  \ifaftersec
+     \removelastskip%
+     \vspace{-\baselineskip}
+  \fi
+  \global\aftersecfalse}
+
+
+% Subsection styling
+\titleformat{\subsection}{\subskip\itshape}{}{0pt}{}[]
+\titlespacing*{\subsection}{0em}{0.5ex}{0ex}
+
 \raggedbottom
 
 % useful macro
@@ -295,7 +325,7 @@
 \end{itemize}
 
 %% CONFERENCE PROCEEDINGS
-\section{conference papers}
+\section{conference presentations}
 
 \mbox{}\vspace{-\dimexpr\baselineskip\relax}
 \vspace*{-1em}
@@ -332,6 +362,33 @@
   \item \enquote{\textbf{Panama Papers: Temporal and Spatial Trends in Entity Formation}}, Symposium on Big Data, Human Health and Statistics,  \textit{University of Michigan}. Ann Arbor, MI.  June. 2016.
         
 \end{itemize}
+
+%% Advising
+
+\section{advising}
+
+\mbox{}\vspace{-\dimexpr\baselineskip\relax}
+
+%% \vspace{\baselineskip}
+
+
+\subsection{Undergraduate}
+\begin{itemize}[label={}]
+%% 
+
+\item Elaine Sarazen. Thayer School of Engineering. Research Co-Mentor (with Klaus Keller). 2023--present.  
+
+\item Daniel Xu. Quantitative Social Science \& Geography. Research Co-Mentor (with Klaus Keller). 2023--present.  
+
+\item Julian Gutierrez. Thayer School of Engineering. Research Co-Mentor (with Klaus Keller). 2023--present.  
+
+\item Camry Gach. Undeclared. WISP Research Internship Program Co-Mentor (with Klaus Keller). 2022--2023.  
+
+\item Carter (Street) Roberts. Quantitative Social Sciences \& Environmental Studies. Research Co-Mentor (with Klaus Keller). 2022--2023.  
+
+%% 
+\end{itemize}
+
 
 %% PEER REVIEW
 

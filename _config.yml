@@ -37,6 +37,8 @@ sections:
     file: talks.yml
   - title: Workshop Presentations
     file: workshops.yml
+  - title: Advising
+    file: advising.yml
   - title: Teaching
     file: teaching.yml
   - title: Awards
