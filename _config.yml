@@ -2,7 +2,7 @@
 person:
   first_name: Adam
   last_name: Pollack
-  title: Postdoctoral Research Associate
+  title: Research Scientist
   university: Dartmouth College
   department: Thayer School of Engineering
   department_link: https://engineering.dartmouth.edu/
@@ -35,8 +35,6 @@ sections:
     file: education.yml
   - title: Invited Talks
     file: talks.yml
-  - title: Workshop Presentations
-    file: workshops.yml
   - title: Advising
     file: advising.yml
   - title: Teaching
@@ -45,7 +43,7 @@ sections:
     file: awards.yml
   - title: Peer Review
     file: peerreview.yml
-  - title: Additional Experience
-    file: training.yml
+  - title: Service
+    file: service.yml
   - title: Grants and Contracts
     file: grants.yml

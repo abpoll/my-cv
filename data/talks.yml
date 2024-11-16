@@ -1,4 +1,10 @@
 talks:
+  - title: "Improving equity considerations in multisector dynamics research"
+    event: "2024 Energy Modeling Forum Snowmass Workshop"
+    org: "Department of Energy, Biological and Environmental Research"
+    location: Snowmass, Colorado
+    month: June
+    year: 2024
   - title: "Funding rules that promote equity in climate adaptation outomces"
     event: Faculty Seminar Series Talk
     org: The Arthur L. Irving Institute for Energy and Society at Dartmouth
@@ -59,6 +65,12 @@ talks:
     org: Climate Econometrics, Nuffield College, University of Oxford
     location: Online
     month: January
+    year: 2021
+  - title: "Can property level flood losses be reliably predicted?"
+    event: First Street Foundation Flood Lab Workshop
+    org: First Street Foundation
+    location: Online
+    month: June
     year: 2021
   - title: "Flood Loss Risk and Its Drivers: Evidence from Massachusetts Residential Properties"
     event: 2020 Climate and Health Seminar

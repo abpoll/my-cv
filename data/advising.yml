@@ -38,3 +38,11 @@ advising:
    start: 2023
    end: present
    type: Undergraduate
+
+ - name: Rainwater Harvesting User Study and Instrumentation Design
+   field: Thayer School of Engineering
+   university: Dartmouth College
+   role: Engs 89/90 Capstone Project Advisor
+   start: 2024
+   end: present
+   type: Undergraduate

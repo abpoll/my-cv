@@ -281,24 +281,19 @@
   ((* endfor *))
 \end{itemize}
 
-%% CONFERENCE PROCEEDINGS
+%% Conference Presentations
 \section{conference presentations}
 
 \mbox{}\vspace{-\dimexpr\baselineskip\relax}
 \vspace*{-1em}
-\printbibliography[type=inproceedings, heading=none]
+\printbibliography[type=inproceedings, keyword={presentation}, heading=none]
 
-%% WORKSHOPS
-((* set sect = data.sections | select_by_attr_name("title", "Workshop Presentations") *))
-\section{(((sect.title | lower)))}
+%% Conference Posters
+\section{conference posters}
 
 \mbox{}\vspace{-\dimexpr\baselineskip\relax}
-
-\begin{itemize}[label={}]
-  ((* for i in sect.entries.workshops | sort(attribute="year", reverse=True) *))
-  \item ((* if i.link *))\href{(((i.link)))}{\enquote{\textbf{(((i.title | escape_tex)))}}}((* else *))\enquote{\textbf{(((i.title | escape_tex)))}}((* endif *)), ((* if i.event *))(((i.event | escape_tex))), ((* endif *)) \textit{(((i.org)))}. (((i.location))). ((* if i.format *))(((i.format))).((* endif *)) (((i.month)))((* if i.month != "May" *)).((* endif *)) (((i.year)))((* if i.coauthor *)) (with (((i.coauthor))))((* endif *)).
-        ((* endfor *))
-\end{itemize}
+\vspace*{-1em}
+\printbibliography[type=inproceedings, keyword={poster}, heading=none]
 
 %% Advising
 ((* set sect = data.sections | select_by_attr_name("title", "Advising") *))
@@ -368,7 +363,7 @@
 \end{itemize}
 
 %% Additional Experience and Training
-((* set sect = data.sections | select_by_attr_name("title", "Additional Experience") *))
+((* set sect = data.sections | select_by_attr_name("title", "Service") *))
 \section{(((sect.title | lower)))}
 
 \mbox{}\vspace{-\dimexpr\baselineskip\relax}
