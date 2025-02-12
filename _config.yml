@@ -47,3 +47,5 @@ sections:
     file: service.yml
   - title: Grants and Contracts
     file: grants.yml
+  - title: Media Coverage
+    file: media.yml
