@@ -2,18 +2,19 @@
 person:
   first_name: Adam
   last_name: Pollack
-  title: Research Scientist
-  university: Dartmouth College
-  department: Thayer School of Engineering
-  department_link: https://engineering.dartmouth.edu/
-  email: adam.b.pollack@dartmouth.edu
+  title: Assistant Professor
+  university: University of Iowa
+  department: School of Earth, Environment, and Sustainability
+  department_link: https://https://sees.uiowa.edu/
+  email: adam-pollack@uiowa.edu
   web: https://abpoll.github.io/
   github: abpoll
   googlescholar: mnigw6AAAAAJ
   orcid: 0000-0001-6642-0591
   address:
-    line1: Hinman 8000, 15 Thayer Dr
-    postcode: Hanover, NH 03755
+    line1: 316 Jessup Hall
+    line2: 5 West Jefferson Street
+    postcode: Iowa City, IA 52242
     country: USA
 
 paths:

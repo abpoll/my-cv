@@ -1,18 +1,22 @@
 University of Iowa:
+  - role: Assistant Professor
+    org: School of Earth, Environment, and Sustainability
+    start: 2026
+    end: present
   - role: Adjunct Assistant Professor
     org: School of Earth, Environment, and Sustainability
     start: 2025
-    end: present
+    end: 2026
 
 Dartmouth College:
   - role: Lecturer
     org: Thayer School of Engineering
     start: 2025
-    end: present
+    end: 2026
   - role: Research Scientist
     org: Thayer School of Engineering
     start: 2024
-    end: present
+    end: 2026
   - role: Postdoctoral Research Associate
     org: Thayer School of Engineering
     start: 2022
