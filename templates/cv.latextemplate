@@ -295,6 +295,18 @@
 \vspace*{-1em}
 \printbibliography[type=inproceedings, keyword={poster}, heading=none]
 
+%% Media Coverage
+((* set sect = data.sections | select_by_attr_name("title", "Media Coverage") *))
+\section{(((sect.title | lower)))}
+
+\mbox{}\vspace{-\dimexpr\baselineskip\relax}
+
+\begin{itemize}[label={}]
+  ((* for i in sect.entries.media | sort(attribute="date", reverse=True) *))
+  \item ((* if i.url *))\href{(((i.url)))}{(((i.title)))}((* else *))i.title((* endif *)), \textit{(((i.author)))}, \textbf{(((i.publication)))}, (((i.date))).
+        ((* endfor *))
+\end{itemize}
+
 %% Advising
 ((* set sect = data.sections | select_by_attr_name("title", "Advising") *))
 \section{(((sect.title | lower)))}

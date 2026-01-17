@@ -20,7 +20,7 @@ advising:
    university: Dartmouth College
    role: Research Co-Mentor (with Klaus Keller)
    start: 2023
-   end: present
+   end: 2025
    type: Undergraduate
  
  - name: Daniel Xu
@@ -28,15 +28,7 @@ advising:
    university: Dartmouth College
    role: Research Co-Mentor (with Klaus Keller)
    start: 2023
-   end: present
-   type: Undergraduate
- 
- - name: Julian Gutierrez
-   field: Thayer School of Engineering
-   university: Dartmouth College
-   role: Research Co-Mentor (with Klaus Keller)
-   start: 2023
-   end: present
+   end: 2025
    type: Undergraduate
 
  - name: Rainwater Harvesting User Study and Instrumentation Design
@@ -44,5 +36,13 @@ advising:
    university: Dartmouth College
    role: Engs 89/90 Capstone Project Advisor
    start: 2024
+   end: 2025
+   type: Undergraduate
+
+ - name: Julian Gutierrez
+   field: Thayer School of Engineering
+   university: Dartmouth College
+   role: Research Co-Mentor (with Klaus Keller)
+   start: 2023
    end: present
    type: Undergraduate

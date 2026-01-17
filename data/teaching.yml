@@ -4,6 +4,13 @@ classes:
     university: Dartmouth College
     role: Developed and Presented Teaching Module in Bayesian Statistical Modeling and Computation Course
     semester: Winter
+    year: 2025
+  
+  - title: How to produce FAIR analyses
+    course: ENGG 107
+    university: Dartmouth College
+    role: Developed and Presented Teaching Module in Bayesian Statistical Modeling and Computation Course
+    semester: Winter
     year: 2024
   
   - title: Data, Models and Analysis in Earth and Environment
