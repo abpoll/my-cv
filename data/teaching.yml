@@ -1,11 +1,4 @@
-classes:
-  - title: Decision analysis for wicked climate problems
-    course: N/A
-    university: N/A
-    role: Piloted graduate-level course with 4 PhD students
-    semester: Fall
-    year: 2025
-  
+classes:  
   - title: How to produce FAIR analyses
     course: ENGG 107
     university: Dartmouth College
