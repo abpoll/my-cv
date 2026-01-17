@@ -2,6 +2,7 @@ docs/one-page.*
 docs/five-pager.*
 
 ## Core latex/pdflatex auxiliary files:
+*.bpx
 *.aux
 *.lof
 *.log
@@ -291,6 +292,7 @@ Srikrishnan-CV.tex
 Doss-Gollin-CV.tex
 
 ./DS_Store
+./*DS_Store
 
 *.pyc
 
