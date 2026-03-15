@@ -112,6 +112,9 @@
   giveninits,
 	date=year
 ]{biblatex}
+% No italics for article titles
+\DeclareFieldFormat{title}{#1}
+
 \renewbibmacro{in:}{}
 \setlength{\bibhang}{15pt}
 
@@ -149,11 +152,11 @@
 % got this from here https://www.reddit.com/r/LaTeX/comments/40zflc/embedding_url_link_into_article_title_using/
 \newbibmacro{string+doi}[1]{%
   \iffieldundef{doi}{\iffieldundef{url}{#1}{\href{\thefield{url}}{#1}}}{\href{http://dx.doi.org/\thefield{doi}}{#1}}}
-\DeclareFieldFormat*{title}{\usebibmacro{string+doi}{\mkbibemph{#1}}}
+% \DeclareFieldFormat*{title}{\usebibmacro{string+doi}{\mkbibemph{#1}}}
 
 % have to load this last
 \usepackage{hyperref} % Required for adding links	and customizing them
-\hypersetup{hidelinks, breaklinks, urlcolor=DartAccent, linkcolor=DartAccent}
+\hypersetup{colorlinks, breaklinks, urlcolor=DartAccent, linkcolor=DartAccent}
 
 %---------------------------------------------------------------------
 
