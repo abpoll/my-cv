@@ -288,6 +288,7 @@ TSWLatexianTemp*
 #*Notes.bib
 
 __pycache__/*
+*/special-cases/
 Srikrishnan-CV.tex
 Doss-Gollin-CV.tex
 
