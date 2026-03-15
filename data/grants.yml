@@ -1,4 +1,11 @@
 grants:
+  - title: Development of urban flood forecasting services in the Caribbean and in Comoros
+    funder: World Meteorological Orgainzation
+    PI: Humberto Vergarra
+    role: Co-Principal Investigator
+    start: 2026
+    end: 2026
+    amount: 1,201,553
   - title: Contribute to the Integrated Coastal Modeling (ICoM) project, Subaward to Dartmouth College from Battelle
     funder: DOE-Prime
     PI: Klaus Keller

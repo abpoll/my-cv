@@ -1,6 +1,17 @@
 media:
+  - title: This New Wildfire Risk Model Has No Secrets
+    author: Emily Pontecorvo
+    publication: Heatmap News
+    date: 2026-02-10
+    url: https://heatmap.news/adaptation/carbonplan-fire-risk
+  - title: Scientists Recommend Steps to Strengthen Transparency of Climate Risk Research
+    author: Greg Bruno
+    publication: Rutgers Today
+    date: 2026-01-28
+    url: https://www.rutgers.edu/news/scientists-recommend-steps-strengthen-transparency-climate-risk-research
   - title: Dartmouth Researchers Call for More Transparency in Climate-Risk Science
     author: Catha Mayor
+    publication: Dartmouth News
     date: 2026-01-16
     url: https://engineering.dartmouth.edu/news/researchers-call-for-more-transparency-in-climate-risk-science
   - title: Zillow Deleting Home Climate Risk Scores Reveals Limits of Flood, Fire Data

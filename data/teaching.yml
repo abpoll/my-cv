@@ -1,4 +1,18 @@
 classes:  
+  - title: Environmental Justice
+    course: SEES 4770
+    university: University of Iowa
+    role: Primary Instructor
+    semester: Spring
+    year: 2026
+
+  - title: School of Earth, Environment, and Sustainability Foundations
+    course: SEES 5010
+    university: University of Iowa
+    role: Co-Instructor
+    semester: Spring
+    year: 2026
+  
   - title: How to produce FAIR analyses
     course: ENGG 107
     university: Dartmouth College
