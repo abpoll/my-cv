@@ -280,7 +280,12 @@
 
 \begin{itemize}[label={}]
   ((* for i in sect.entries.talks | sort(attribute="year", reverse=True) *))
-  \item \enquote{\textbf{(((i.title | escape_tex)))}}, ((* if i.event *))(((i.event | escape_tex))), ((* endif *)) \textit{(((i.org | escape_tex)))}. (((i.location))), (((i.year))).
+  \item
+((* if i.link *))
+\href{(((i.link)))}{\textbf{(((i.title | escape_tex)))}}
+((* else *))
+\textbf{(((i.title | escape_tex)))}
+((* endif *)), ((* if i.event *))(((i.event | escape_tex))), ((* endif *))\textit{(((i.org | escape_tex)))}. (((i.location))), (((i.year))).
   ((* endfor *))
 \end{itemize}
 
@@ -357,8 +362,14 @@
 
 \begin{itemize}[label={}]
   ((* for award in sect.entries.awards | sort(attribute="year", reverse=True) *))
-  \item \textbf{(((award.title)))}, (((award.org))), (((award.year))).
-        ((* endfor *))
+  \item
+    ((* if award.link *))
+      \href{(((award.link)))}{\textbf{(((award.title | escape_tex)))}}
+    ((* else *))
+      \textbf{(((award.title | escape_tex)))}
+    ((* endif *)),
+    (((award.org | escape_tex))), (((award.year))).
+  ((* endfor *))
 \end{itemize}
 
 %% Teaching
