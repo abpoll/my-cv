@@ -46,3 +46,11 @@ advising:
    start: 2023
    end: 2026
    type: Undergraduate
+
+ - name: Adam Strahorn
+   field:  Independent Creative Research by Undergraduates Fellow
+   university: University of Iowa
+   role: Research Mentor
+   start: 2026
+   end: present
+   type: Undergraduate
