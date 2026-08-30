@@ -46,3 +46,12 @@ def sort_first_year(array, attr, reverse=False):
 def sort_advisees(array, reverse=False):
     sort_order = {"Postdoctoral": 0, "Graduate": 1, "Independent Study": 2, "Undergraduate": 3}
     return sorted(array, key=lambda val: sort_order[val[0]], reverse=reverse)
+
+def sort_universities(array, reverse=False):
+    sort_order = {
+        "University of Iowa": 0,
+        "Dartmouth College": 1,
+        "Boston University": 2,
+        "Stony Brook University": 3
+    }
+    return sorted(array, key=lambda val: sort_order[val[0]], reverse=reverse)

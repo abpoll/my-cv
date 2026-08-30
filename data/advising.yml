@@ -56,17 +56,18 @@ advising:
    type: Undergraduate
 
  - name: Jim Kacer
-   field: Graduate Directed Study (Independent Study)
+   field: Continuing Education (Iowa Engineering License)
    university: University of Iowa
    role: Instructor
    start: 2026
    end: present
-   type: Continuing Education (Iowa Engineering License)
+   type: Independent Study
 
  - name: Elif Korkmaz
    field: School of Earth, Environment, and Sustainability
    university: University of Iowa
-   role: Ph.D. Committee Member
+   role: Committee Member
    start: 2026
    end: present
    type: Graduate
+   degree: Ph.D.

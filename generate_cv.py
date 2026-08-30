@@ -103,7 +103,8 @@ def main():
         filters.select_by_attr_name,
         filters.sort_by_attr,
         filters.sort_first_year,
-        filters.sort_advisees
+        filters.sort_advisees,
+        filters.sort_universities
     ]
 
     cv = CV(CONFIG_FILE, filters=my_filters)

@@ -321,25 +321,46 @@
 
 \mbox{}\vspace{-\dimexpr\baselineskip\relax}
 
-%% \vspace{\baselineskip}
 ((* set advisees = sect.entries.advising *))
+
 ((* for t, i in advisees | groupby("type") | sort_advisees(reverse=False) *))
-\subsection{(((t)))}
-\begin{itemize}[label={}]
-%% ((* if t == "Postdoctoral" *))
-%% ((* for x in i | sort_by_attr(["end", "start"], reverse=True) *))
-%% \item (((x.name))). (((x.area))). ((*if x.note *))(((x.note))).((* endif *)) (((x.start)))--(((x.end))). ((*if x.current *)) Current: (((x.current))).((* endif *))
-%% ((* endfor *))
-%% ((* elif t == "Graduate" *))
-%% ((* for x in i | sort_by_attr(["degree", "end", "start"], reverse=True) *))
-%% \item (((x.name))). (((x.degree))), (((x.field))). (((x.role))). (((x.start)))--(((x.end))). ((*if x.thesis *)) Thesis: "((( x.thesis | capitalize )))."((* endif *)) ((*if x.current *)) Current: (((x.current))).((* endif *))
-%% ((* endfor *))
-%% ((* else *))
-((* for x in i | sort_by_attr(["end", "start"], reverse=True) *))
-\item (((x.name))). (((x.field))). (((x.role))). (((x.start)))--(((x.end))). ((*if x.thesis *)) Thesis: "((( x.thesis | capitalize )))."((* endif *)) ((*if x.current *)) Current: (((x.current))).((* endif *))
+
+\subsection{\normalfont\bfseries (((t)))}
+
+\begin{itemize}[label={}, leftmargin=1.5em, nosep, noitemsep]
+
+((* for u, university_group in i | groupby("university") | sort_universities(reverse=False) *))
+
+  \item \textit{(((u | escape_tex)))}
+
+  \begin{itemize}[label={}, leftmargin=1.5em, nosep, noitemsep]
+
+    ((* if t == "Postdoctoral" *))
+
+      ((* for x in university_group | sort_by_attr(["end", "start"], reverse=True) *))
+      \item (((x.name))). (((x.area))). ((*if x.note *))(((x.note))).((* endif *)) (((x.start)))--(((x.end))). ((*if x.current *)) Current: (((x.current))).((* endif *))
+      ((* endfor *))
+
+    ((* elif t == "Graduate" *))
+
+      ((* for x in university_group | sort_by_attr(["degree", "end", "start"], reverse=True) *))
+      \item (((x.name))). (((x.degree))), (((x.field))). (((x.role))). (((x.start)))--(((x.end))). ((*if x.thesis *)) Thesis: "((( x.thesis | capitalize )))."((* endif *)) ((*if x.current *)) Current: (((x.current))).((* endif *))
+      ((* endfor *))
+
+    ((* else *))
+
+      ((* for x in university_group | sort_by_attr(["end", "start"], reverse=True) *))
+      \item (((x.name))). (((x.field))). (((x.role))). (((x.start)))--(((x.end))). ((*if x.thesis *)) Thesis: "((( x.thesis | capitalize )))."((* endif *)) ((*if x.current *)) Current: (((x.current))).((* endif *))
+      ((* endfor *))
+
+    ((* endif *))
+
+  \end{itemize}
+
 ((* endfor *))
-%% ((* endif *))
+
 \end{itemize}
+
 ((* endfor *))
 
 %% PEER REVIEW
@@ -380,10 +401,10 @@
 
 ((* set courses = sect.entries.classes *))
 \begin{itemize}[label={}]
-  ((* for univ, course_list in courses | groupby("university")  *))
-  \item \textbf{(((univ)))}
+  ((* for univ, course_list in courses | groupby("university") | sort_universities(reverse=False) *))
+  \item \textit{(((univ | escape_tex)))}
         ((* for course in course_list | sort_first_year("year", reverse=True) *))
-        (((course.title | escape_tex))). (((course.role))). (((course. semester))) (((course.year))).
+        (((course.title | escape_tex))). (((course.role | escape_tex))). (((course.semester | escape_tex))) (((course.year))).
         ((* endfor *))
         ((* endfor *))
 \end{itemize}
