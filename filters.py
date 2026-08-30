@@ -44,5 +44,5 @@ def sort_first_year(array, attr, reverse=False):
     return sorted(array, key=lambda x: int(re.findall(r'^\d{4}', str(x[attr]))[0]), reverse=reverse)
 
 def sort_advisees(array, reverse=False):
-    sort_order = {"Postdoctoral": 0, "Graduate": 1, "Undergraduate": 2}
+    sort_order = {"Postdoctoral": 0, "Graduate": 1, "Independent Study": 2, "Undergraduate": 3}
     return sorted(array, key=lambda val: sort_order[val[0]], reverse=reverse)
