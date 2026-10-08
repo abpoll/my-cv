@@ -1,0 +1,323 @@
+\documentclass[10pt,oneside]{article}
+
+% language setup
+\usepackage[english]{babel}
+
+% margins
+\usepackage[left=1.5in, right=1.75in, top=1in, bottom=0.75in]{geometry}% adjust the page margins
+
+\RequirePackage{xcolor}
+\definecolor{DartGreen}{HTML}{006633} % official Dartmouth Green color -- use for headers
+\definecolor{DartAccent}{HTML}{66cc33} % official Dartmouth accent -- use for urls
+\definecolor{BlueAccent}{HTML}{55cee6} % background color, blue accent -- do not use for anything else
+\definecolor{BlueAccent}{HTML}{55cee6} % backup color 
+\definecolor{GrassGreen}{HTML}{359245}
+\definecolor{WarmYellow}{HTML}{E9A139}
+%% Choose fonts for use with xelatex
+
+
+% Better footer
+\usepackage{fancyhdr}
+\fancyhf{}
+\fancyfoot[L]{Current as of \today}
+\fancyfoot[R]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{1pt}
+\pagestyle{fancy}
+
+
+\usepackage{fontspec}
+\setromanfont[
+	Path = ../fonts/,
+  UprightFont = *-Regular,
+	BoldFont = *-Bold,
+	ItalicFont = *-Italic,
+	BoldItalicFont = *-BoldItalic,
+	Extension = .ttf,
+]{Lato}
+\setsansfont[
+	Path = ../fonts/,
+  UprightFont = *-Regular,
+	Extension = .ttf,
+]{Inconsolata}
+
+% Section styling
+\usepackage{titlesec}
+\titlespacing*{\section}{2cm}{1ex}{0.25in}
+\titleformat{\section}[leftmargin]{\raggedleft\sffamily\footnotesize\bfseries}{}{0pt}{\color{DartAccent}}
+
+\makeatletter
+\newif\ifaftersec\aftersecfalse
+
+\newcommand\setsubskip{%
+    \global\aftersectrue
+    \everypar{%
+        \global\aftersecfalse
+        \if@noskipsec
+            \global\@noskipsecfalse
+            \clubpenalty\@M
+            \hskip-\parindent
+            \begingroup
+                \@svsechd\unskip{\hspace{\@tempskipb}}%
+            \endgroup
+        \else
+            \clubpenalty\@clubpenalty\everypar{}%
+        \fi}}
+
+\newcommand\subskip{%
+  \ifaftersec
+     \removelastskip%
+     \vspace{-\baselineskip}
+  \fi
+  \global\aftersecfalse}
+
+
+% Subsection styling
+\titleformat{\subsection}{\subskip\itshape}{}{0pt}{}[]
+\titlespacing*{\subsection}{0em}{0.5ex}{0ex}
+
+\raggedbottom
+
+% useful macro
+\newcommand{\dotspace}{\quad}
+
+% better lists
+\usepackage{enumitem}
+\setlist[itemize, 1]{nosep, noitemsep, labelsep=-5pt, leftmargin=*, after=\vspace{\baselineskip}, itemindent=-15pt, labelindent=5pt}
+
+% fixed width tables
+\usepackage{array}
+\newcommand{\PreserveBackslash}[1]{\let\temp=\\#1\let\\=\temp}
+\newcolumntype{C}[1]{>{\PreserveBackslash\centering}p{#1}}
+\newcolumntype{R}[1]{>{\PreserveBackslash\raggedleft}p{#1}}
+\newcolumntype{L}[1]{>{\PreserveBackslash\raggedright}p{#1}}
+
+\usepackage[autostyle=true, autopunct=true, english=american]{csquotes}
+
+\usepackage[
+	backend=biber,
+	style=publist,
+	plauthorfirstinit=true,
+	plauthorhandling=highlight,
+	plnumbered=false,
+	labeldateparts=false,
+	linktitles={none, doi, url},
+	hlyear=true,
+	marginyear=false,
+	doi=true,
+	url=false,
+	isbn=false,
+	maxbibnames=6,
+	maxcitenames=6,
+  giveninits,
+	date=year
+]{biblatex}
+% No italics for article titles
+\DeclareFieldFormat{title}{#1}
+
+\renewbibmacro{in:}{}
+\setlength{\bibhang}{15pt}
+
+% remove period inbetween volume and number
+\renewbibmacro*{volume+number+eid}{%
+  \printfield{volume}%
+%  \setunit*{\adddot}% DELETED
+  \setunit*{\addnbspace}% NEW (optional); there's also \addnbthinspace
+  \printfield{number}%
+  \setunit{\addcomma\space}%
+  \printfield{eid}%
+}
+
+\AtEveryBibitem{%
+  \clearlist{language}%
+}
+
+% add bib resources
+\addbibresource{../bibliography/my-papers.bib}
+\addbibresource{../bibliography/conferences.bib}
+
+% bold my name
+\plauthorname[Adam]{Pollack}
+\plauthorname[Adam B]{Pollack}
+\plauthorname[A]{Pollack}
+
+% include everything in bibliography
+\nocite{*}
+
+%% other stuff
+% icons for the contact info
+\usepackage{fontawesome5}
+\usepackage{academicons}
+% TeX Live 2026: XeTeX finds academicons.tfm before academicons.otf when the font
+% is loaded by name, so some icons (e.g. Google Scholar) go missing. Force the .otf.
+\makeatletter
+\renewfontfamily\ai@font{academicons.otf}
+\makeatother
+
+% got this from here https://www.reddit.com/r/LaTeX/comments/40zflc/embedding_url_link_into_article_title_using/
+\newbibmacro{string+doi}[1]{%
+  \iffieldundef{doi}{\iffieldundef{url}{#1}{\href{\thefield{url}}{#1}}}{\href{http://dx.doi.org/\thefield{doi}}{#1}}}
+% \DeclareFieldFormat*{title}{\usebibmacro{string+doi}{\mkbibemph{#1}}}
+
+% have to load this last
+\usepackage{hyperref} % Required for adding links	and customizing them
+\hypersetup{colorlinks, breaklinks, urlcolor=DartAccent, linkcolor=DartAccent}
+
+%---------------------------------------------------------------------
+
+\begin{document}
+
+\thispagestyle{empty}
+%% Name and contact block
+\noindent{
+  \footnotesize
+  \color{DartGreen}
+  \begin{tabular}{L{0.5\textwidth}R{0.5\textwidth}}
+    University of Iowa       & \texttt{\href{mailto:adam-pollack@uiowa.edu}{adam-pollack@uiowa.edu}} \, \faEnvelope                                                                                  \\
+    School of Earth, Environment, and Sustainability       & \texttt{\href{https://abpoll.github.io/}{https://abpoll.github.io/}} \, \faGlobe                                                                                                \\
+    307 Jessup Hall    & \texttt{\href{https://github.com/abpoll}{abpoll}} \, \faGithub                                                                      \\
+    Iowa City, IA 52242 & \texttt{\href{https://scholar.google.com/citations?user=mnigw6AAAAAJ}{Adam Pollack}} \, \aiGoogleScholar \\
+  \end{tabular}
+}
+
+\bigskip
+
+%% Name
+\noindent{\LARGE\bfseries \textcolor{DartGreen}{Adam Pollack}}
+\reversemarginpar
+
+\bigskip
+
+%% Appointments
+
+\section{appointments}
+
+\mbox{}\vspace{-\dimexpr\baselineskip\relax}
+
+\begin{itemize}[label={}]
+
+  \item \textbf{University of Iowa}, Assistant Professor, School of Earth, Environment, and Sustainability, 2026--present.
+
+  \item \textbf{Dartmouth College}, Research Scientist and Postdoctoral Research Associate, Thayer School of Engineering, 2022--2026.
+
+\end{itemize}
+
+%% Education
+
+\section{education}
+
+\mbox{}\vspace{-\dimexpr\baselineskip\relax}
+
+\begin{itemize}[label={}]
+
+  \item \textbf{Boston University}, Ph.D., Earth \& Environment, 2022.
+
+  \item \textbf{Stony Brook University}, M.S., 2017, and B.S., 2016, Applied Mathematics and Statistics.
+
+\end{itemize}
+
+%% Grants and Contracts
+
+\section{grants and contracts}
+
+\mbox{}\vspace{-\dimexpr\baselineskip\relax}
+
+\begin{itemize}[label={}]
+  
+  \item \textbf{Co-Principal Investigator}, \enquote{Development of urban flood forecasting services in the Caribbean and in Comoros}.  PI: Humberto Vergara. {World Meteorological Organization}, \$1,201,553. 2026.
+        
+  \item \textbf{Co-Principal Investigator}, \enquote{Contribute to the Integrated Coastal Modeling (ICoM) project, Subaward to Dartmouth College from Battelle}.  PI: Klaus Keller. {DOE-Prime}, \$231,794. 2023--2025.
+        
+\end{itemize}
+
+%% Publications
+
+\section{journal articles}
+
+\mbox{}\vspace{-\dimexpr\baselineskip\relax}
+\vspace*{-1em}
+
+\uspunctuation
+
+\printbibliography[type=article, heading=none]
+
+\section{preprints \& in review}
+
+\mbox{}\vspace{-\dimexpr\baselineskip\relax}
+\vspace*{-1em}
+\printbibliography[type=unpublished, heading=none]
+
+%% Sections below use a tighter gap after lists so the CV fits on two pages
+\setlist[itemize, 1]{nosep, noitemsep, labelsep=-5pt, leftmargin=*, after=\vspace{0.5\baselineskip}, itemindent=-15pt, labelindent=5pt}
+
+%% Science translation and impact (summary; CIROH research-to-operations framing)
+\section{science translation \& impact}
+
+\mbox{}\vspace{-\dimexpr\baselineskip\relax}
+
+\begin{itemize}[label={}]
+
+\item Technical Advisory Group member, Massachusetts' Executive Office of Energy and Environmental Affairs flood mapping (2024). Research covered by \href{https://www.houstonchronicle.com/news/investigations/article/fema-flood-risk-study-22309575.php}{Houston Chronicle}, \href{https://www.bloomberg.com/news/articles/2025-12-09/real-estate-climate-risk-score-debate-reveals-limits-of-flood-fire-modeling}{Bloomberg}, \href{https://www.economist.com/graphic-detail/2023/04/25/accounting-for-flood-risk-would-lower-american-house-prices-by-187bn}{The Economist}, and \href{https://www.washingtonpost.com/climate-environment/2023/02/16/flood-risk-housing-market-property-value/}{The Washington Post}.
+
+\end{itemize}
+
+%% Invited talks (summary)
+\section{invited talks}
+
+\mbox{}\vspace{-\dimexpr\baselineskip\relax}
+
+\begin{itemize}[label={}]
+
+\item 20 invited talks (2020--2026), including University of Wisconsin-Madison, University of Iowa (Iowa Flood Center), Tulane University, and the Pennsylvania Emergency Management Agency flood disclosure workshop.
+
+\end{itemize}
+
+%% Conferences (summary; first-author/presenter only)
+\section{conferences}
+
+\mbox{}\vspace{-\dimexpr\baselineskip\relax}
+
+\begin{itemize}[label={}]
+
+\item 18 first-author presentations and posters (2020--2026), including AGU, EGU, DOE Earth and Environmental Systems Modeling, and the Society for Decision Making Under Deep Uncertainty.
+
+\end{itemize}
+
+%% Awards
+\section{awards}
+
+\mbox{}\vspace{-\dimexpr\baselineskip\relax}
+
+\begin{itemize}[label={}]
+
+\item \href{https://www.agu.org/user-profile?cstkey=2aed905f-b819-4e8e-a70a-338d3932a001}{\textbf{Outstanding Reviewer - Earth's Future}}, American Geophysical Union, 2025.
+
+\item \href{https://researchguides.dartmouth.edu/c.php?g=1435408&p=10819576#s-lg-box-35687611}{\textbf{Open Scholarship Commitment Award for Reproducible Research}}, Dartmouth College, 2025.
+
+\end{itemize}
+
+%% Mentoring and teaching (summary)
+\section{mentoring \& teaching}
+
+\mbox{}\vspace{-\dimexpr\baselineskip\relax}
+
+\begin{itemize}[label={}]
+
+\item \textbf{Mentoring}: 6 undergraduate researchers and one capstone team (Dartmouth College, University of Iowa); Ph.D. committee member (University of Iowa).
+
+\item \textbf{Teaching}: Environmental Justice and SEES Foundations (University of Iowa, 2026); FAIR analyses module (Dartmouth College, 2024, 2025).
+
+\end{itemize}
+
+%% Service (summary)
+\section{service}
+
+\mbox{}\vspace{-\dimexpr\baselineskip\relax}
+
+\begin{itemize}[label={}]
+
+\item NSF ad hoc reviewer (2026); program committee, Society for Decision Making Under Deep Uncertainty (2026); AGU session co-convener (2024, 2025); Environmental Defense Fund climate-risk workshop participant (2026); reviewer for 17 journals including Water Resources Research, Nature Communications, and Nature Climate Change.
+
+\end{itemize}
+
+\end{document}
