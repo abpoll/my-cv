@@ -1,4 +1,4 @@
 [submodule "bibliography"]
 	path = bibliography
-	url = https://github.com/abpoll/bibliography.git
+	url = git@github.com:abpoll/bibliography.git
 	branch = main
