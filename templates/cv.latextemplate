@@ -148,6 +148,11 @@
 % icons for the contact info
 \usepackage{fontawesome5}
 \usepackage{academicons}
+% TeX Live 2026: XeTeX finds academicons.tfm before academicons.otf when the font
+% is loaded by name, so some icons (e.g. Google Scholar) go missing. Force the .otf.
+\makeatletter
+\renewfontfamily\ai@font{academicons.otf}
+\makeatother
 
 % got this from here https://www.reddit.com/r/LaTeX/comments/40zflc/embedding_url_link_into_article_title_using/
 \newbibmacro{string+doi}[1]{%
