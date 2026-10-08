@@ -1,0 +1,14 @@
+[workspace]
+name = "cv"
+channels = ["conda-forge"]
+platforms = ["osx-arm64", "osx-64"]
+version = "0.1.0"
+
+[dependencies]
+python = ">=3.10"
+jinja2 = "*"
+pyyaml = ">=5.1"
+
+[tasks]
+# Regenerate docs/Pollack-CV.tex from the YAML data and the template
+build-cv = "python generate_cv.py"

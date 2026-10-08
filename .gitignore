@@ -289,8 +289,6 @@ TSWLatexianTemp*
 
 __pycache__/*
 */special-cases/
-Srikrishnan-CV.tex
-Doss-Gollin-CV.tex
 
 ./DS_Store
 ./*DS_Store
@@ -323,3 +321,6 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+# pixi environments
+.pixi/*
+!.pixi/config.toml
