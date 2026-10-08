@@ -36,7 +36,7 @@ def sort_by_attr(array, attr, reverse=False):
     if type(attr) is list:
         sorted_array = sorted(array, key=lambda x: tuple(str(x[a]) for a in attr), reverse=reverse)
     else:
-        sorted_array = sorted(array, key=lambda x: str(x[a] for a in attr), reverse=reverse)
+        sorted_array = sorted(array, key=lambda x: str(x[attr]), reverse=reverse)
     return sorted_array
 
 

@@ -239,7 +239,7 @@
 
 \begin{itemize}[label={}]
   ((* for i in sect.entries.grants | sort(attribute="end", reverse=True) | sort(attribute="start", reverse=True) *))
-  \item \textbf{(((i.role | escape_tex)))}, \enquote{(((i.title | escape_tex)))}. ((* if i.PI *)) PI: (((i.PI | escape_tex))).((* endif *)) {(((i.funder | escape_tex)))}, \$(((i.amount)))((* if i.total *)) (total: \$(((i.total))))((* endif *)). (((i.start)))--(((i.end))).
+  \item \textbf{(((i.role | escape_tex)))}, \enquote{(((i.title | escape_tex)))}. ((* if i.PI *)) PI: (((i.PI | escape_tex))).((* endif *)) {(((i.funder | escape_tex)))}, \$(((i.amount)))((* if i.total *)) (total: \$(((i.total))))((* endif *)). ((* if i.start == i.end *))(((i.start)))((* else *))(((i.start)))--(((i.end)))((* endif *)).
         ((* endfor *))
 \end{itemize}
 
@@ -311,7 +311,7 @@
 
 \begin{itemize}[label={}]
   ((* for i in sect.entries.media | sort(attribute="date", reverse=True) *))
-  \item ((* if i.url *))\href{(((i.url)))}{(((i.title)))}((* else *))i.title((* endif *)), \textit{(((i.author)))}, \textbf{(((i.publication)))}, (((i.date))).
+  \item ((* if i.url *))\href{(((i.url)))}{(((i.title)))}((* else *))(((i.title)))((* endif *)), \textit{(((i.author)))}, \textbf{(((i.publication)))}, (((i.date))).
         ((* endfor *))
 \end{itemize}
 
